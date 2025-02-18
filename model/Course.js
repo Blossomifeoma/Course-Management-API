@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const {schema} = mongoose
+const {schema} = mongoose;
 
 const courseSchema = new schema(
     { 

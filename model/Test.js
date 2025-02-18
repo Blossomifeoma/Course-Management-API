@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const {schema} = mongoose
+const {schema} = mongoose;
 
 const testSchema = new schema(
     {
@@ -62,7 +62,7 @@ const testSchema = new schema(
        },
       createdBy: { 
             type: schema.Types.ObjectId, 
-            ref: "instructorCourse",
+            ref: "instructorCoursegg",
             required: true,
         }, 
         semester: { 

@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const {schema} = mongoose
+const {schema} = mongoose;
 
 const instructorCourseDetailsSchema = new schema(
     {
@@ -12,6 +12,7 @@ const instructorCourseDetailsSchema = new schema(
         ref: "Program",
         required: true,
     },
+    // An instructor can take more than one level
     Level: {
         type: schema.Types.ObjectId,
         ref: "Level",
@@ -27,14 +28,14 @@ const instructorCourseDetailsSchema = new schema(
         ref: "academicSession",
         required: true,
     },
-    testsUploaded: { 
+    testsUploaded: [{ 
         type: schema.Types.ObjectId, 
         ref: "Test",
-    },
-    assignmentsCreated: { 
+    }],
+    assignmentsCreated: [{ 
         type: schema.Types.ObjectId, 
         ref: "assignment" 
-    },
+    }],
 });
 
 const InstructorCourse = mongoose.model("instructorCourse", instructorCourseDetailsSchema);
